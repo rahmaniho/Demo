@@ -71,10 +71,10 @@ const parts = [
 ];
 
 const uses = [
-  { icon: "fa-solid fa-house-chimney-window", title: "سقف شیروانی و اتاق زیرشیروانی", desc: "نورگیرهای بازشو و ثابت، نیمه‌تاریکیِ زیر سقف را به روشن‌ترین کنج خانه بدل می‌کنند." },
-  { icon: "fa-solid fa-mountain-sun", title: "ویلاها و خانه‌های ییلاقی", desc: "درهای اسلایدینگ قدی، منظره را تمام‌قد به میان خانه می‌کشند؛ جنگل، دریا یا کوهستان." },
-  { icon: "fa-solid fa-building", title: "آپارتمان‌های شهری", desc: "عایقی صوتی و حرارتی تا در میانهٔ هیاهوی شهر، جزیره‌ای آرام برای زیستن داشته باشی." },
-  { icon: "fa-solid fa-cloud-showers-heavy", title: "مناطق پرباران و برفی", desc: "آب‌بندی سه‌لایه و شیشه‌ای که نه از باران تند می‌هراسد، نه از سنگینی برف." },
+  { icon: "fa-solid fa-house-chimney-window", img: "images/hero.jpg", title: "سقف شیروانی و اتاق زیرشیروانی", desc: "نورگیرهای بازشو و ثابت، نیمه‌تاریکیِ زیر سقف را به روشن‌ترین کنج خانه بدل می‌کنند." },
+  { icon: "fa-solid fa-mountain-sun", img: "images/project1.jpg", title: "ویلاها و خانه‌های ییلاقی", desc: "درهای اسلایدینگ قدی، منظره را تمام‌قد به میان خانه می‌کشند؛ جنگل، دریا یا کوهستان." },
+  { icon: "fa-solid fa-building", img: "images/urban-night.jpg", title: "آپارتمان‌های شهری", desc: "عایقی صوتی و حرارتی تا در میانهٔ هیاهوی شهر، جزیره‌ای آرام برای زیستن داشته باشی." },
+  { icon: "fa-solid fa-cloud-showers-heavy", img: "images/project2.jpg", title: "مناطق پرباران و برفی", desc: "آب‌بندی سه‌لایه و شیشه‌ای که نه از باران تند می‌هراسد، نه از سنگینی برف." },
 ];
 
 const steps = [
@@ -84,11 +84,11 @@ const steps = [
   { n: "۰۴", icon: "ri-shield-check-line", title: "تحویل، گارانتی و پشتیبانی", desc: "کلید که به دستت برسد، تازه آغاز همراهی است: ۱۰ سال گارانتی کتبی شیشه و پروفیل، ۵ سال خدمات نصب و پشتیبانی تا هر زمان که بخواهی." },
 ];
 
-const metrics: [string, string][] = [
-  ["۱٫۰", "ضریب انتقال حرارت (W/m²K)"],
-  ["۴۲dB", "کاهش نویز محیط"],
-  ["+۱۲۰۰", "خانهٔ روشن‌شده"],
-  ["۱۰ سال", "گارانتی کتبی"],
+const metrics: { v: number; dec?: number; prefix?: string; suffix?: string; label: string }[] = [
+  { v: 1, dec: 1, label: "ضریب انتقال حرارت (W/m²K)" },
+  { v: 42, suffix: "dB", label: "کاهش نویز محیط" },
+  { v: 1200, prefix: "+", label: "خانهٔ روشن‌شده" },
+  { v: 10, suffix: " سال", label: "گارانتی کتبی" },
 ];
 
 const projects = [
@@ -255,19 +255,28 @@ function AnatomyDiagram() {
 function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const bar = useRef<HTMLDivElement>(null);
   const active = useActiveSection();
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12);
+      if (bar.current) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.current.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <nav className={cn("fixed inset-x-0 top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur-md transition-shadow", scrolled && "shadow-lg shadow-black/5")}>
+    <>
+      <div ref={bar} className="fixed right-0 top-0 z-[60] h-1 bg-brand-green" style={{ width: 0 }} />
+      <nav className={cn("fixed inset-x-0 top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur-md transition-shadow", scrolled && "shadow-lg shadow-black/5")}>
       <div className="section-wrap flex h-20 items-center justify-between">
-        <button onClick={() => go("home")} className="flex cursor-pointer items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center bg-brand-green text-white"><i className="ri-window-2-line text-2xl" /></span>
-          <span className="font-display text-2xl">پنجره‌های آلپاین</span>
+        <button onClick={() => go("home")} className="flex min-w-0 cursor-pointer items-center gap-3">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-brand-green text-white"><i className="ri-window-2-line text-2xl" /></span>
+          <span className="font-display truncate text-xl sm:text-2xl">پنجره‌های آلپاین</span>
         </button>
         <div className="desktop-nav flex items-center gap-7">
           {NAV.map(([id, label]) => (
@@ -280,7 +289,7 @@ function Header() {
           <a href="tel:02191004820" className="px-4 py-2 text-sm text-neutral-700 hover:text-brand-green" dir="ltr">۰۲۱ ۹۱۰۰ ۴۸۲۰</a>
           <button onClick={() => go("contact")} className="cursor-pointer bg-brand-black px-5 py-2.5 text-sm text-white transition hover:bg-brand-green">مشاوره رایگان</button>
         </div>
-        <button onClick={() => setOpen(!open)} aria-label="منو" className="h-10 w-10 cursor-pointer md:hidden">
+        <button onClick={() => setOpen(!open)} aria-label="منو" className="relative z-50 h-10 w-10 shrink-0 self-center cursor-pointer md:hidden">
           <i className={`${open ? "ri-close-line" : "ri-menu-line"} text-2xl`} />
         </button>
       </div>
@@ -292,13 +301,13 @@ function Header() {
           <button onClick={() => { go("contact"); setOpen(false); }} className="mt-4 w-full bg-brand-black py-3 text-white">مشاوره رایگان</button>
         </div>
       )}
-    </nav>
+      </nav>
+    </>
   );
 }
 
 function Hero() {
   const root = useRef<HTMLDivElement>(null);
-  const quote = useRef<HTMLParagraphElement>(null);
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.timeline({ scrollTrigger: { trigger: ".hero-container", start: "top top", end: "+=150%", pin: true, scrub: 1 } })
@@ -306,16 +315,6 @@ function Hero() {
         .to(".hero__cover", { "--overlay-opacity": 0, ease: "power1.inOut" }, "<")
         .to(".hero__bg", { scale: 1.1, filter: "blur(0px) brightness(1)", ease: "power1.inOut" }, "<")
         .to(".hero__title", { scale: 1, opacity: 1, filter: "blur(0px)", ease: "power1.inOut" }, "<");
-      if (quote.current) {
-        const txt = quote.current.textContent || "";
-        quote.current.innerHTML = [...txt].map((c) => (c === " " ? '<span class="char">&nbsp;</span>' : `<span class="char">${c}</span>`)).join("");
-        const chars = quote.current.querySelectorAll(".char");
-        gsap.set(chars, { opacity: 0.18 });
-        gsap.timeline({ scrollTrigger: { trigger: ".quote-stick", pin: true, start: "center center", end: "+=1500", scrub: 1 } })
-          .to(chars, { opacity: 1, stagger: 1, ease: "none" })
-          .to({}, { duration: 8 })
-          .to(".quote-fade", { opacity: 0, scale: 1.12, duration: 30 });
-      }
     }, root);
     return () => ctx.revert();
   }, []);
@@ -336,9 +335,88 @@ function Hero() {
           </div>
         </section>
       </div>
-      <section className="quote-stick">
-        <p ref={quote} className="quote-fade">پنجره تنها شیشه نیست؛ قابی است که منظرهٔ زندگی‌ات را برمی‌گزیند — و ما عمری صرف آن کرده‌ایم که این قاب شایستهٔ نگاه تو باشد.</p>
-      </section>
+    </div>
+  );
+}
+
+const manifestoCards = [
+  { img: "images/hero-window.jpg", cap: "پنجره‌ای که آسمان را صدا می‌زند" },
+  { img: "images/project3.jpg", cap: "منظره، مهمان دائمی خانه" },
+  { img: "images/install.jpg", cap: "نصب به دست استادکار" },
+];
+
+/** بخش منشور: متن کلمه‌به‌کلمه (بدون شکستن پیوستگی حروف فارسی) روی تصویر شب، با کارت‌های عکس پرنده */
+function Manifesto() {
+  const root = useRef<HTMLElement>(null);
+  const quote = useRef<HTMLParagraphElement>(null);
+  useLayoutEffect(() => {
+    const mm = gsap.matchMedia();
+    const setup = (desktop: boolean) => {
+      if (quote.current) {
+        const txt = quote.current.textContent || "";
+        if (!quote.current.dataset.split) {
+          quote.current.innerHTML = txt.split(" ").map((w) => `<span class="qword">${w}</span>`).join(" ");
+          quote.current.dataset.split = "1";
+        }
+      }
+      gsap.set(".qword", { opacity: 0, y: 30, filter: "blur(7px)" });
+      gsap.set(".quote-card", { opacity: 0, y: 90, rotate: (i: number) => [-5, 4, -3][i % 3] });
+      if (desktop) {
+        const tl = gsap.timeline({ scrollTrigger: { trigger: ".quote-stick", pin: true, start: "center center", end: "+=2400", scrub: 1 } });
+        tl.to(".qword", { opacity: 1, y: 0, filter: "blur(0px)", stagger: 0.05, ease: "none" })
+          .to(".quote-bg", { scale: 1.18, ease: "none" }, 0)
+          .to(".quote-card", { opacity: 1, y: 0, rotate: 0, stagger: 0.12, ease: "none" }, "-=0.15")
+          .to({}, { duration: 0.6 });
+      } else {
+        const tl = gsap.timeline({ scrollTrigger: { trigger: ".quote-stick", start: "top 65%", toggleActions: "play none none none" } });
+        tl.to(".qword", { opacity: 1, y: 0, filter: "blur(0px)", stagger: 0.04, duration: 0.6, ease: "power2.out" })
+          .to(".quote-card", { opacity: 1, y: 0, rotate: 0, stagger: 0.12, duration: 0.7, ease: "power2.out" }, "-=0.3");
+      }
+    };
+    mm.add("(min-width: 768px)", () => setup(true));
+    mm.add("(max-width: 767px)", () => setup(false));
+    return () => mm.revert();
+  }, []);
+  return (
+    <section className="quote-stick" ref={root}>
+      <div className="quote-bg" style={{ backgroundImage: `url("${asset("images/night-sky.jpg")}")` }} />
+      <div className="quote-inner">
+        <p ref={quote} className="quote-text">پنجره تنها شیشه نیست؛ قابی است که منظرهٔ زندگی‌ات را برمی‌گزیند — و ما عمری صرف آن کرده‌ایم که این قاب شایستهٔ نگاه تو باشد.</p>
+        <div className="quote-cards">
+          {manifestoCards.map((c) => (
+            <figure key={c.cap} className="quote-card">
+              <img src={asset(c.img)} alt={c.cap} loading="lazy" />
+              <figcaption>{c.cap}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const ticker: [string, string][] = [
+  ["ri-sun-line", "نورگیر سقفی هوشمند"],
+  ["ri-window-2-line", "پنجرهٔ سه‌جداره"],
+  ["ri-volume-mute-line", "عایق صوتی شهری"],
+  ["ri-landscape-line", "درهای اسلایدینگ"],
+  ["ri-shield-check-line", "ده سال گارانتی کتبی"],
+  ["ri-temp-cold-line", "پروفیل ترمال‌بریک"],
+  ["ri-drop-line", "آب‌بندی سه‌لایه"],
+];
+
+function Marquee() {
+  return (
+    <div className="marquee" aria-hidden="true">
+      <div className="marquee__track">
+        {[0, 1].map((k) => (
+          <div className="marquee__group" key={k}>
+            {ticker.map(([icon, label]) => (
+              <span key={label}><i className={`${icon} text-xl`} />{label}</span>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -418,6 +496,7 @@ function Uses() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {uses.map((x, i) => (
             <article key={x.title} className="industry-card reveal" style={{ transitionDelay: `${i * 70}ms` }}>
+              <div className="card-img"><img src={asset(x.img)} alt={x.title} loading="lazy" /></div>
               <div className="mb-5 flex h-12 w-12 items-center justify-center bg-brand-beige-light text-brand-green"><i className={`${x.icon} text-xl`} /></div>
               <h3 className="mb-3 text-xl">{x.title}</h3>
               <p className="text-sm leading-7 text-brand-grey">{x.desc}</p>
@@ -430,14 +509,23 @@ function Uses() {
 }
 
 function Projects() {
+  const root = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
+        gsap.fromTo(el, { y: -26 }, { y: 26, ease: "none", scrollTrigger: { trigger: el.parentElement, start: "top bottom", end: "bottom top", scrub: true } });
+      });
+    }, root);
+    return () => ctx.revert();
+  }, []);
   return (
-    <section id="projects" className="bg-white py-24">
+    <section id="projects" className="bg-white py-24" ref={root}>
       <div className="section-wrap">
         <Heading title="خانه‌هایی که نور را باز یافتند" sub="دریچه‌ای به چند پروژهٔ اخیر؛ روایت‌هایی از نور، سکوت و منظرهٔ بازیافته" />
         <div className="grid gap-8 lg:grid-cols-3">
           {projects.map((s, i) => (
             <article key={s.title} className="reveal bg-white shadow-sm" style={{ transitionDelay: `${i * 100}ms` }}>
-              <div className="story-img"><img src={asset(s.img)} alt={s.title} loading="lazy" /></div>
+              <div className="story-img"><img src={asset(s.img)} alt={s.title} loading="lazy" className="parallax-img" data-parallax /></div>
               <div className="p-8">
                 <span className="text-sm font-bold text-brand-green">{s.tag}</span>
                 <h3 className="my-3 text-3xl">{s.title}</h3>
@@ -473,14 +561,39 @@ function Process() {
   );
 }
 
+function Counter({ v, dec = 0, prefix = "", suffix = "" }: { v: number; dec?: number; prefix?: string; suffix?: string }) {
+  const ref = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const fa = (n: string) => n.replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[+d]);
+    const render = (t: number) => { el.textContent = prefix + fa(t.toFixed(dec).replace(".", "٫")) + suffix; };
+    render(0);
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      const t0 = performance.now(), dur = 1600;
+      const tick = (now: number) => {
+        const p = Math.min(1, (now - t0) / dur);
+        render(v * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.6 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [v, dec, prefix, suffix]);
+  return <strong ref={ref} className="font-display block text-5xl text-brand-beige" />;
+}
+
 function Metrics() {
   return (
     <section className="bg-brand-black py-20 text-white">
       <div className="section-wrap grid gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
-        {metrics.map(([n, l]) => (
-          <div key={l} className="reveal">
-            <strong className="font-display block text-5xl text-brand-beige">{n}</strong>
-            <span className="mt-3 block text-white/70">{l}</span>
+        {metrics.map((m) => (
+          <div key={m.label} className="reveal">
+            <Counter v={m.v} dec={m.dec} prefix={m.prefix} suffix={m.suffix} />
+            <span className="mt-3 block text-white/70">{m.label}</span>
           </div>
         ))}
       </div>
@@ -498,7 +611,7 @@ function InstallBand() {
   return (
     <section id="about" className="bg-white py-24">
       <div className="section-wrap grid items-center gap-12 lg:grid-cols-2">
-        <div className="story-img reveal"><img src={asset("images/install.jpg")} alt="نصابِ گواهی‌شدهٔ آلپاین، مشغول نصب پنجرهٔ سه‌جداره" loading="lazy" /></div>
+        <div className="story-img reveal"><img src={asset("images/install.jpg")} alt="نصابِ گواهی‌شدهٔ آلپاین، مشغول نصب پنجرهٔ سه‌جداره" loading="lazy" className="kenburns-img" /></div>
         <div className="reveal">
           <h2 className="section-title mb-6">نصب، نیمی از خودِ محصول است</h2>
           <p className="mb-7 leading-9 text-brand-grey">
@@ -666,6 +779,8 @@ export default function App() {
       <Header />
       <main className="bg-brand-beige-light">
         <Hero />
+        <Manifesto />
+        <Marquee />
         <Products />
         <Anatomy />
         <Uses />
