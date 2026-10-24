@@ -31,84 +31,84 @@ const products = [
   {
     icon: "ri-sun-line",
     title: "نورگیر سقفی هوشمند",
-    desc: "سقف اتاق‌های تاریک را به آسمان باز کنید؛ نور طبیعی فراوان، تهویه مطبوع و کنترل کامل از راه دور.",
-    bullets: ["بازشو برقی با ریموت و اپلیکیشن", "سنسور باران و باد", "شیشه سه‌جداره با پوشش Low-E"],
+    desc: "هر اتاق تاریک، آسمانی است که سال‌ها فراموش شده. سقف را کمی کنار می‌زنیم تا نور مهمان همیشگی خانه‌ات شود؛ با تهویه‌ای مطبوع و فرمانی که در دست توست.",
+    bullets: ["بازشوی برقی، با ریموت و اپلیکیشن", "سنسور باران و باد؛ نگهبانی خودکار", "شیشهٔ سه‌جداره با پوشش Low-E"],
     chart: "seasons",
-    chartNote: "میانگین ساعت نور طبیعی در روز",
+    chartNote: "میانگین ساعت‌های نور طبیعی در هر روز سال",
   },
   {
     icon: "ri-window-2-line",
     title: "پنجره سه‌جداره آلومینیومی",
-    desc: "ترکیب پروفیل ترمال‌بریک و محفظه گاز آرگون، اتلاف انرژی را تا مرز استانداردهای passive-house پایین می‌آورد.",
-    bullets: ["ضریب انتقال حرارت ۱٫۰ W/m²K", "گاز آرگون بین لایه‌ها", "پوشش بازتابنده Low-E"],
+    desc: "شیشه و گاز و قاب را چنان به هم سپرده‌ایم که گرما دیگر راه فراری نیابد؛ پنجره‌ای که زمستان را پشت خود می‌گذارد و تا مرز استانداردهای خانهٔ منفعل پیش می‌رود.",
+    bullets: ["ضریب انتقال حرارت تنها ۱٫۰ W/m²K", "محفظهٔ گاز آرگون میان لایه‌ها", "پوشش بازتابندهٔ Low-E"],
     chart: "donut",
-    chartNote: "کاهش اتلاف انرژی نسبت به پنجره تک‌جداره",
+    chartNote: "کاهش اتلاف انرژی در مقایسه با پنجرهٔ تک‌جداره",
   },
   {
     icon: "ri-volume-mute-line",
     title: "عایق صوتی شهری",
-    desc: "اگر کنار خیابان شلوغ یا بزرگراه زندگی می‌کنید، لایه‌های شیشه و درزبندی چندگانه سکوت را به خانه برمی‌گردانند.",
-    bullets: ["کاهش تا ۴۲ دسی‌بل صدای محیط", "درزبندی مغناطیسی سه‌لایه", "خواب آرام‌تر در شب"],
+    desc: "اگر خانه‌ات کنار هیاهوی شهر است، میان تو و هیاهو دیواری می‌کشیم — دیواری از شیشه که نور را می‌گذراند و صدا را هرگز.",
+    bullets: ["تا ۴۲ دسی‌بل سکوت، هدیهٔ شب‌هایت", "درزبندی مغناطیسی سه‌لایه", "خوابی آرام، بی‌خبر از خیابان"],
     chart: "noise",
-    chartNote: "سطح صدا (دسی‌بل) پیش و پس از نصب",
+    chartNote: "سطح صدا (دسی‌بل) پیش از نصب و پس از آن",
   },
   {
     icon: "ri-landscape-line",
     title: "پنجره قدی و اسلایدینگ",
-    desc: "قاب‌های باریک و دهانه‌های بدون ستون، منظره بیرون را مثل یک تابلوی زنده به داخل خانه می‌آورند.",
-    bullets: ["دید پانوراما بدون ستون مزاحم", "یراق‌آلات نرم و بی‌صدا", "قفل ایمنی کودک"],
+    desc: "قاب‌ها را باریک کردیم و ستون‌ها را برداشتیم تا منظرهٔ بیرون، بی‌واسطه و تمام‌قد، مهمان اتاق‌هایت شود.",
+    bullets: ["دید پانوراما، بی هیچ ستون مزاحم", "یراق‌آلاتی نرم و بی‌صدا", "قفل ایمنی کودک"],
     chart: "temp",
-    chartNote: "پایداری دمای داخل در برابر نوسان بیرون",
+    chartNote: "پایداری دمای داخل در برابر نوسان‌های بیرون",
   },
 ];
 
 const parts = [
-  ["شیشه بیرونی نشکن ۴mm", "لایه نخست در برابر باد، باران و ضربه؛ با لبه‌های صیقل‌خورده."],
-  ["محفظه گاز آرگون", "گاز بی‌ اثر و خشک که انتقال حرارت و میعان را متوقف می‌کند."],
-  ["پوشش بازتابنده Low-E", "لایه نامرئی که گرما را به داخل اتاق بازمی‌گرداند."],
-  ["شیشه میانی و داخلی", "دو لایه محافظ اضافه برای سکوت و ایمنی بیشتر."],
-  ["پروفیل ترمال‌بریک آلومینیوم", "قاب مقاوم با پل حرارتی شکسته؛ بدون تغییر رنگ تا ده‌ها سال."],
+  ["شیشهٔ بیرونی نشکن ۴mm", "سپر نخستین خانه در برابر باد، باران و ضربه؛ با لبه‌هایی صیقل‌خورده."],
+  ["محفظهٔ گاز آرگون", "گازی بی‌اثر و خشک که راه را بر انتقال حرارت و میعان می‌بندد."],
+  ["پوشش بازتابندهٔ Low-E", "لایه‌ای نامرئی که گرما را همان‌جا که متعلق است باز می‌گرداند: به داخل اتاق."],
+  ["شیشهٔ میانی و داخلی", "دو نگهبان دیگر، برای سکوتی عمیق‌تر و ایمنی بیشتر."],
+  ["پروفیل ترمال‌بریک آلومینیوم", "قامتی استوار با پل حرارتی شکسته؛ بی‌رنگ‌پریدگی تا ده‌ها سال."],
 ];
 
 const uses = [
-  { icon: "fa-solid fa-house-chimney-window", title: "سقف شیروانی و اتاق زیرشیروانی", desc: "نورگیرهای بازشو و ثابت، فضای نیمه‌تاریک زیر سقف را به روشن‌ترین اتاق خانه تبدیل می‌کند." },
-  { icon: "fa-solid fa-mountain-sun", title: "ویلا و خانه‌های ییلاقی", desc: "درهای اسلایدینگ قدی با دید پانوراما به جنگل، دریا یا کوهستان." },
-  { icon: "fa-solid fa-building", title: "آپارتمان‌های شهری", desc: "عایق صوتی و حرارتی برای زندگی آرام در کنار خیابان‌های شلوغ." },
-  { icon: "fa-solid fa-cloud-showers-heavy", title: "مناطق پرباران و برفی", desc: "آب‌بندی سه‌لایه و شیشه مقاوم در برابر باران تند و سنگینی برف." },
+  { icon: "fa-solid fa-house-chimney-window", title: "سقف شیروانی و اتاق زیرشیروانی", desc: "نورگیرهای بازشو و ثابت، نیمه‌تاریکیِ زیر سقف را به روشن‌ترین کنج خانه بدل می‌کنند." },
+  { icon: "fa-solid fa-mountain-sun", title: "ویلاها و خانه‌های ییلاقی", desc: "درهای اسلایدینگ قدی، منظره را تمام‌قد به میان خانه می‌کشند؛ جنگل، دریا یا کوهستان." },
+  { icon: "fa-solid fa-building", title: "آپارتمان‌های شهری", desc: "عایقی صوتی و حرارتی تا در میانهٔ هیاهوی شهر، جزیره‌ای آرام برای زیستن داشته باشی." },
+  { icon: "fa-solid fa-cloud-showers-heavy", title: "مناطق پرباران و برفی", desc: "آب‌بندی سه‌لایه و شیشه‌ای که نه از باران تند می‌هراسد، نه از سنگینی برف." },
 ];
 
 const steps = [
-  { n: "۰۱", icon: "ri-ruler-2-line", title: "بازدید و اندازه‌گیری", desc: "کارشناس ما در محل حاضر می‌شود؛ ابعاد، زاویه سقف، جهت نور و وضعیت سازه را بررسی می‌کند." },
-  { n: "۰۲", icon: "ri-pencil-ruler-2-line", title: "طراحی و انتخاب پروفیل", desc: "بر اساس اقلیم، کاربرد و بودجه شما، بهترین ترکیب شیشه، قاب و یراق‌آلات پیشنهاد می‌شود." },
-  { n: "۰۳", icon: "ri-tools-line", title: "نصب تخصصی و آب‌بندی", desc: "نصب توسط تیم گواهی‌شده با آب‌بندی سه‌لایه، بدون آسیب به بنا و تحویل تمیز کارگاه." },
-  { n: "۰۴", icon: "ri-shield-check-line", title: "تحویل، گارانتی و پشتیبانی", desc: "۱۰ سال گارانتی کتبی شیشه و پروفیل، ۵ سال خدمات نصب و پشتیبانی مادام‌العمر." },
+  { n: "۰۱", icon: "ri-ruler-2-line", title: "بازدید و اندازه‌گیری", desc: "کارشناس ما مهمان خانه‌ات می‌شود؛ ابعاد، زاویهٔ سقف، جهت تابش نور و وضعیت سازه را مو به مو می‌سنجد." },
+  { n: "۰۲", icon: "ri-pencil-ruler-2-line", title: "طراحی و انتخاب پروفیل", desc: "بر اساس اقلیم، کاربرد و بودجه‌ات، خوش‌نشین‌ترین ترکیب شیشه، قاب و یراق را برایت می‌نویسیم." },
+  { n: "۰۳", icon: "ri-tools-line", title: "نصب تخصصی و آب‌بندی", desc: "تیم گواهی‌شدهٔ ما با آب‌بندی سه‌لایه دست به کار می‌شود؛ بی‌آسیب به بنا، و کارگاهی که تمیزتر از روز نخست تحویل می‌شود." },
+  { n: "۰۴", icon: "ri-shield-check-line", title: "تحویل، گارانتی و پشتیبانی", desc: "کلید که به دستت برسد، تازه آغاز همراهی است: ۱۰ سال گارانتی کتبی شیشه و پروفیل، ۵ سال خدمات نصب و پشتیبانی تا هر زمان که بخواهی." },
 ];
 
 const metrics: [string, string][] = [
-  ["۱٫۰", "ضریب انتقال حرارت W/m²K"],
-  ["۴۲dB", "کاهش صدای محیط"],
-  ["+۱۲۰۰", "پروژه نصب‌شده"],
+  ["۱٫۰", "ضریب انتقال حرارت (W/m²K)"],
+  ["۴۲dB", "کاهش نویز محیط"],
+  ["+۱۲۰۰", "خانهٔ روشن‌شده"],
   ["۱۰ سال", "گارانتی کتبی"],
 ];
 
 const projects = [
-  { img: "/images/project1.jpg", tag: "ویلای مدرن", title: "نمای تمام‌شیشه در دل شب", text: "پنجره‌های قدی سه‌جداره با پروفیل مشکی، مرز میان نشیمن و طبیعت را از میان برداشتند؛ بدون اتلاف حرارت، بدون بازتاب آزاردهنده." },
-  { img: "/images/project2.jpg", tag: "نورگیر سقفی", title: "آرامش زیر باران", text: "نورگیر سه‌جداره روی سقف شیروانی سنگی؛ حتی در باران تند هم بدون چکه، بدون صدا و بدون میعان." },
-  { img: "/images/project3.jpg", tag: "خانه جنگلی", title: "صبح‌هایی رو به مه", text: "درهای اسلایدینگ سه‌جداره، منظره مه‌آلود جنگل را به اتاق نشیمن آوردند و سرمای صبح را پشت شیشه نگه داشتند." },
+  { img: "/images/project1.jpg", tag: "ویلای مدرن", title: "نمای تمام‌شیشه در دل شب", text: "پنجره‌های قدی سه‌جداره با پروفیل مشکی، مرز میان نشیمن و شب را از میان برداشتند؛ نه گرمایی می‌گریزد، نه بازتابی می‌آزارد." },
+  { img: "/images/project2.jpg", tag: "نورگیر سقفی", title: "آرامش زیر باران", text: "نورگیر سه‌جداره بر سقف شیروانی سنگی؛ حتی در تندترین باران، نه چکه‌ای، نه صدایی، نه حتی بخاری بر شیشه." },
+  { img: "/images/project3.jpg", tag: "خانه جنگلی", title: "صبح‌هایی رو به مه", text: "درهای اسلایدینگ سه‌جداره منظره مه‌آلود جنگل را به نشیمن آوردند و سرمای صبح را همان‌جا، پشت شیشه، نگه داشتند." },
 ];
 
 const testimonials: [string, string, string][] = [
-  ["نورگیر اتاق زیرشیروانی را در یک روز نصب کردند؛ انگار یک اتاق جدید به خانه اضافه شد. نور عصرش دیدنی است.", "نگار محمدی", "صاحب‌خانه، لواسان"],
-  ["کنار بزرگراه زندگی می‌کنیم و حالا شب‌ها صدای ماشین‌ها را نمی‌شنویم. تفاوت شیشه سه‌جداره باورنکردنی است.", "امید رستمی", "آپارتمان‌نشین، تهران"],
-  ["از اندازه‌گیری تا تحویل، همه‌چیز برنامه‌ریزی‌شده و تمیز پیش رفت. پشتیبانی‌شان هم واقعاً پاسخ‌گوست.", "سارا کاویانی", "معمار و کارفرما"],
+  ["نورگیر اتاق زیرشیروانی را در یک روز نصب کردند؛ گویی اتاقی تازه به خانه افزودند که سال‌ها پشت تاریکی پنهان بود. نور عصرش را باید دید، نه گفت.", "نگار محمدی", "صاحب‌خانه، لواسان"],
+  ["کنار بزرگراه زندگی می‌کنیم؛ و حالا شب‌ها شهر بیرون است و سکوت درون. تفاوت شیشهٔ سه‌جداره را باید زندگی کرد تا باور شود.", "امید رستمی", "آپارتمان‌نشین، تهران"],
+  ["از نخستین اندازه‌گیری تا واپسین تحویل، همه‌چیز بر نظم بود و پاکیزگی؛ و پشتیبانی‌شان هنوز هم بی‌درنگ پاسخ می‌دهد.", "سارا کاویانی", "معمار و کارفرما"],
 ];
 
 const faqs: [string, string][] = [
-  ["نصب نورگیر سقفی چقدر طول می‌کشد؟", "برای یک نورگیر استاندارد روی سقف شیروانی، معمولاً یک تا دو روز کاری کافی است. پروژه‌های نمای تمام‌شیشه بسته به ابعاد، بین سه روز تا دو هفته زمان می‌برند."],
-  ["آیا در فصل سرد یا بارانی هم نصب انجام می‌شود؟", "بله. با پوشش موقت سقف و آب‌بندی مرحله‌ای، هرگز خانه شما در معرض باران یا سرما نمی‌ماند؛ تیم نصب در همان روز، دهانه را می‌بندد."],
-  ["گارانتی دقیقاً شامل چه مواردی است؟", "۱۰ سال گارانتی کتبی برای شیشه (از جمله میعان بین لایه‌ها) و پروفیل آلومینیوم، ۵ سال برای یراق‌آلات و آب‌بندی نصب، به‌همراه پشتیبانی مادام‌العمر."],
-  ["سنسور باران چگونه کار می‌کند؟", "با نشست نخستین قطره‌های باران روی حسگر بیرونی، بازشوی برقی به‌صورت خودکار و کامل بسته می‌شود؛ حتی اگر خانه نباشید یا برق قطع باشد، فنر ایمنی دهانه را می‌بندد."],
-  ["هزینه تقریبی چطور محاسبه می‌شود؟", "پس از بازدید رایگان، پیش‌فاکتور شفاف بر اساس ابعاد دهانه، نوع شیشه و یراق‌آلات صادر می‌شود. قیمت نهایی همان عدد پیش‌فاکتور است؛ بدون هزینه پنهان."],
+  ["نصب نورگیر سقفی چقدر زمان می‌برد؟", "نورگیری استاندارد بر سقف شیروانی معمولاً در یک تا دو روز کاری جان می‌گیرد. پروژه‌های نمای تمام‌شیشه، بسته به وسعت دهانه، از سه روز تا دو هفته."],
+  ["در فصل سرد یا روز بارانی هم نصب می‌کنید؟", "چرا. با پوشش موقت سقف و آب‌بندی مرحله‌به‌مرحله، خانه‌ات هرگز در معرض باران و سرما نمی‌ماند؛ تیم نصب همان روز دهانه را می‌بندد."],
+  ["گارانتی دقیقاً شامل چه مواردی است؟", "ده سال گارانتی کتبی برای شیشه (از جمله میعان میان لایه‌ها) و پروفیل آلومینیوم؛ پنج سال برای یراق‌آلات و آب‌بندی نصب؛ و پشتیبانی‌ای که تاریخ انقضا ندارد."],
+  ["سنسور باران چگونه کار می‌کند؟", "با نخستین قطره‌های باران بر حسگر بیرونی، بازشوی برقی خودکار و کامل بسته می‌شود؛ و اگر خانه نباشی یا برق برود، فنر ایمنی خود دهانه را می‌بندد."],
+  ["هزینه چگونه برآورد می‌شود؟", "پس از بازدید رایگان، پیش‌فاکتوری شفاف بر پایهٔ ابعاد دهانه، نوع شیشه و یراق‌آلات برایت می‌نویسیم. رقم پایانی همان رقم پیش‌فاکتور است؛ بی هیچ هزینهٔ پنهان."],
 ];
 
 function useReveal() {
@@ -212,7 +212,7 @@ function Chart({ type }: { type: string }) {
 /* ---------- آناتومی پنجره ---------- */
 function AnatomyDiagram() {
   return (
-    <svg viewBox="0 0 560 330" className="w-full max-w-xl" role="img" aria-label="برش عرضی پنجره سه‌جداره آلپاین">
+    <svg viewBox="0 0 560 330" className="w-full max-w-xl" role="img" aria-label="برش عرضی پنجرهٔ سه‌جدارهٔ آلپاین">
       {/* قاب */}
       <rect x="252" y="252" width="216" height="30" fill="#3a3f45" />
       <text x="360" y="305" textAnchor="middle" className="chart-axis" fill="#e8ddd3" style={{ fontSize: 12 }}>پروفیل ترمال‌بریک آلومینیوم</text>
@@ -229,14 +229,14 @@ function AnatomyDiagram() {
       <line x1="333" y1="60" x2="333" y2="248" stroke="#ffffff33" strokeDasharray="4 6" />
       {/* پرتو نور: عبور می‌کند */}
       <line x1="540" y1="30" x2="270" y2="230" stroke="#ffd97a" strokeWidth="3" strokeLinecap="round" opacity="0.85" />
-      <text x="540" y="20" textAnchor="end" className="chart-axis" fill="#ffd97a" style={{ fontSize: 12 }}>نور طبیعی: عبور کامل</text>
+      <text x="540" y="20" textAnchor="end" className="chart-axis" fill="#ffd97a" style={{ fontSize: 12 }}>نور طبیعی؛ عبور کامل</text>
       {/* موج حرارت: متوقف می‌شود */}
       <path d="M545 150 q10 -12 20 0 q10 12 20 0" transform="translate(-95 0)" fill="none" stroke="#ff8a66" strokeWidth="3" strokeLinecap="round" />
       <g stroke="#ff8a66" strokeWidth="3" strokeLinecap="round">
         <line x1="462" y1="142" x2="478" y2="158" />
         <line x1="478" y1="142" x2="462" y2="158" />
       </g>
-      <text x="545" y="125" textAnchor="end" className="chart-axis" fill="#ff8a66" style={{ fontSize: 12 }}>اتلاف حرارت: متوقف</text>
+      <text x="545" y="125" textAnchor="end" className="chart-axis" fill="#ff8a66" style={{ fontSize: 12 }}>اتلاف حرارت؛ توقف کامل</text>
       {/* جهت بیرون / داخل */}
       <text x="520" y="290" textAnchor="middle" className="chart-axis" fill="#ffffff88" style={{ fontSize: 12 }}>بیرون</text>
       <text x="200" y="290" textAnchor="middle" className="chart-axis" fill="#ffffff88" style={{ fontSize: 12 }}>داخل</text>
@@ -325,19 +325,19 @@ function Hero() {
         <section className="hero">
           <div className="hero__content">
             <div className="hero__bg" />
-            <h1 className="hero__title">خانه‌ات را<br />غرق نور کن</h1>
+            <h1 className="hero__title">آسمان را<br />به خانه بیاور</h1>
           </div>
           <div className="hero__cover">
-            <img className="hero__cover-img" src={asset("images/hero.jpg")} alt="اتاق زیرشیروانی روشن با نورگیرهای سقفی آلپاین" />
+            <img className="hero__cover-img" src={asset("images/hero.jpg")} alt="اتاق زیرشیروانی غرق در نور، با نورگیرهای سقفی آلپاین" />
           </div>
           <div className="hero-hint">
-            <span>برای دیدن نور، پیمایش کنید</span>
+            <span>آهسته پایین برو؛ نور در راه است</span>
             <i className="ri-arrow-down-line text-xl" />
           </div>
         </section>
       </div>
       <section className="quote-stick">
-        <p ref={quote} className="quote-fade">پنجره فقط شیشه نیست؛ قابی است که منظرهٔ زندگی‌ات را انتخاب می‌کند.</p>
+        <p ref={quote} className="quote-fade">پنجره تنها شیشه نیست؛ قابی است که منظرهٔ زندگی‌ات را برمی‌گزیند — و ما عمری صرف آن کرده‌ایم که این قاب شایستهٔ نگاه تو باشد.</p>
       </section>
     </div>
   );
@@ -356,7 +356,7 @@ function Products() {
   return (
     <section id="products" className="bg-white py-24">
       <div className="section-wrap">
-        <Heading title="محصولاتی که آرامش می‌سازند" sub="از نورگیر سقفی تا پنجره‌های قدی؛ مهندسی‌شده برای نور بیشتر، سکوت بیشتر و مصرف انرژی کمتر" />
+        <Heading title="چهار روایت از نور و سکوت" sub="هر محصول پاسخی است به نیازی دیگر؛ از سقف‌هایی که به آسمان باز می‌شوند تا دیوارهایی که صدا را پشت خود می‌گذارند" />
         <div className="grid gap-8 md:grid-cols-2">
           {products.map((f, i) => (
             <article key={f.title} className="feature-card reveal" style={{ transitionDelay: `${i * 70}ms` }}>
@@ -389,9 +389,9 @@ function Anatomy() {
       <div className="section-wrap grid items-center gap-14 lg:grid-cols-2">
         <div className="reveal order-2 lg:order-1"><AnatomyDiagram /></div>
         <div className="reveal order-1 lg:order-2">
-          <h2 className="section-title mb-6">آناتومی یک پنجره آلپاین</h2>
+          <h2 className="section-title mb-6">آناتومی پنجرهٔ آلپاین</h2>
           <p className="mb-9 text-xl leading-9 text-white/70">
-            هر پنجره ما پنج لایه مهندسی‌شده دارد که نور را عبور می‌دهند و سرما، گرما و صدا را پشت مرز خانه نگه می‌دارند.
+            هر پنجرهٔ آلپاین پنج لایه است که با هم اندیشیده شده‌اند: نور را به آغوش خانه راه می‌دهند و سرما، گرما و هیاهو را پشت مرزها نگه می‌دارند.
           </p>
           <ol className="space-y-5">
             {parts.map(([t, d], i) => (
@@ -414,7 +414,7 @@ function Uses() {
   return (
     <section id="uses" className="bg-brand-beige-light py-24">
       <div className="section-wrap">
-        <Heading title="برای هر فضا، یک راهکار" sub="از سقف شیروانی خانه قدیمی تا نمای شیشه‌ای ویلاهای مدرن" />
+        <Heading title="هر فضا، روایتی دیگر از نور" sub="از سقف شیروانی خانه‌ای صدساله تا نمای شیشه‌ای ویلایی مدرن؛ برای هر فضا روایتی از نور ساخته‌ایم" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {uses.map((x, i) => (
             <article key={x.title} className="industry-card reveal" style={{ transitionDelay: `${i * 70}ms` }}>
@@ -433,7 +433,7 @@ function Projects() {
   return (
     <section id="projects" className="bg-white py-24">
       <div className="section-wrap">
-        <Heading title="پروژه‌های اخیر" sub="نگاهی به خانه‌هایی که نور، سکوت و منظره را دوباره پیدا کردند" />
+        <Heading title="خانه‌هایی که نور را باز یافتند" sub="دریچه‌ای به چند پروژهٔ اخیر؛ روایت‌هایی از نور، سکوت و منظرهٔ بازیافته" />
         <div className="grid gap-8 lg:grid-cols-3">
           {projects.map((s, i) => (
             <article key={s.title} className="reveal bg-white shadow-sm" style={{ transitionDelay: `${i * 100}ms` }}>
@@ -442,7 +442,7 @@ function Projects() {
                 <span className="text-sm font-bold text-brand-green">{s.tag}</span>
                 <h3 className="my-3 text-3xl">{s.title}</h3>
                 <p className="leading-8 text-brand-grey">{s.text}</p>
-                <button onClick={() => go("contact")} className="mt-6 cursor-pointer border-b border-brand-green pb-1 text-brand-green">درخواست مشابه این پروژه ←</button>
+                <button onClick={() => go("contact")} className="mt-6 cursor-pointer border-b border-brand-green pb-1 text-brand-green">پروژه‌ای مشابه برای خانهٔ من ←</button>
               </div>
             </article>
           ))}
@@ -457,7 +457,7 @@ function Process() {
     <section id="process" className="relative overflow-hidden bg-brand-beige-light py-24">
       <div className="absolute -right-20 top-20 h-72 w-72 rounded-full bg-brand-green/10 blur-3xl" />
       <div className="section-wrap relative">
-        <Heading title="فرایند نصب در چهار گام" sub="از تماس اول تا تحویل نهایی؛ بدون غافلگیری و بدون آسیب به بنای شما" />
+        <Heading title="چهار گام تا روشنایی" sub="از نخستین تماس تا واپسین پیچ؛ بی‌غافلگیری و بی‌آسیب به بنای خانه‌ات" />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <article key={s.n} className="step-card reveal" style={{ transitionDelay: `${i * 70}ms` }}>
@@ -490,19 +490,19 @@ function Metrics() {
 
 function InstallBand() {
   const items = [
-    "تیم نصب گواهی‌شده، نه پیمانکار متفرقه",
-    "آب‌بندی سه‌لایه و تست فشار هوا و آب پس از نصب",
-    "پوشش کامل کارگاه؛ خانه شما تمیز تحویل می‌شود",
-    "شیشه سه‌جداره با ضریب انتقال حرارت ۱٫۰ W/m²K",
+    "نصب به دست تیم گواهی‌شدهٔ خودمان، نه پیمانکاران متفرقه",
+    "آب‌بندی سه‌لایه و آزمون فشار هوا و آب پس از نصب",
+    "پوشش کامل کارگاه؛ خانه‌ات تمیزتر از پیش تحویل می‌شود",
+    "شیشهٔ سه‌جداره با ضریب انتقال حرارت ۱٫۰ W/m²K",
   ];
   return (
     <section id="about" className="bg-white py-24">
       <div className="section-wrap grid items-center gap-12 lg:grid-cols-2">
-        <div className="story-img reveal"><img src={asset("images/install.jpg")} alt="نصاب متخصص آلپاین در حال نصب پنجره سه‌جداره" loading="lazy" /></div>
+        <div className="story-img reveal"><img src={asset("images/install.jpg")} alt="نصابِ گواهی‌شدهٔ آلپاین، مشغول نصب پنجرهٔ سه‌جداره" loading="lazy" /></div>
         <div className="reveal">
-          <h2 className="section-title mb-6">نصب، نیمی از محصول است</h2>
+          <h2 className="section-title mb-6">نصب، نیمی از خودِ محصول است</h2>
           <p className="mb-7 leading-9 text-brand-grey">
-            بهترین شیشه سه‌جداره هم اگر درست نصب نشود، چکه می‌کند، صدا می‌دهد و انرژی هدر می‌دهد. به همین دلیل نصب هر پروژه را تنها با تیم آموزش‌دیده خودمان انجام می‌دهیم و پس از پایان کار، دهانه را با تست فشار هوا و آب تحویل می‌دهیم.
+            شیشهٔ سه‌جداره‌ای که درست نصب نشود، چکه می‌کند، صدا می‌دهد و گرمایت را می‌دزدد. به همین باور، نصب هر پروژه را تنها به دست تیم آموزش‌دیدهٔ خودمان می‌سپاریم و در پایان، دهانه را با آزمون فشار هوا و آب تحویل می‌دهیم؛ نه یک قطره کمتر از استاندارد.
           </p>
           <ul className="space-y-4">
             {items.map((x) => (
@@ -522,7 +522,7 @@ function Testimonials() {
   return (
     <section className="bg-brand-beige-light py-24">
       <div className="section-wrap">
-        <Heading title="روایت صاحب‌خانه‌ها" sub="تجربه کسانی که هر صبح با نور طبیعی بیدار می‌شوند" />
+        <Heading title="روایت صاحب‌خانه‌ها" sub="سخن کسانی که هر صبحشان با نور طبیعی آغاز می‌شود" />
         <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map(([q, n, r], i) => (
             <blockquote key={n} className="reveal border-t-4 border-brand-green bg-white p-8" style={{ transitionDelay: `${i * 80}ms` }}>
@@ -543,7 +543,7 @@ function Faq() {
   return (
     <section id="faq" className="bg-white py-24">
       <div className="section-wrap max-w-4xl">
-        <Heading title="پرسش‌های متداول" sub="هرآنچه پیش از سفارش باید بدانید" />
+        <Heading title="پرسش‌های متداول" sub="هر آنچه پیش از آغاز باید بدانی؛ روشن و بی‌پرده" />
         {faqs.map(([q, a], i) => (
           <div key={q} className="faq-item reveal">
             <button onClick={() => setOpen(open === i ? -1 : i)} className="flex w-full cursor-pointer items-center justify-between gap-6 py-6 text-right">
@@ -564,13 +564,13 @@ function Cta() {
   return (
     <section className="bg-brand-green py-24 text-white">
       <div className="section-wrap reveal text-center">
-        <h2 className="section-title mb-6">آماده‌ای سقف خانه‌ات را به آسمان باز کنی؟</h2>
-        <p className="mx-auto mb-9 max-w-2xl text-xl text-white/80">همین امروز مشاوره رایگان بگیر؛ کارشناس ما بازدید، اندازه‌گیری و پیش‌فاکتور شفاف را بر عهده می‌گیرد.</p>
+        <h2 className="section-title mb-6">آماده‌ای سقف را برداری و آسمان را مهمان کنی؟</h2>
+        <p className="mx-auto mb-9 max-w-2xl text-xl text-white/80">از همین امروز آغاز کن؛ بازدید، اندازه‌گیری و پیش‌فاکتور شفاف را ما بر عهده می‌گیریم — رایگان.</p>
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <button onClick={() => go("contact")} className="cursor-pointer bg-white px-8 py-4 font-bold text-brand-green">درخواست مشاوره رایگان</button>
           <a href="tel:02191004820" className="border-2 border-white px-8 py-4 font-bold">تماس تلفنی</a>
         </div>
-        <p className="mt-6 text-sm text-white/65">بازدید رایگان · پیش‌فاکتور شفاف · گارانتی ۱۰ ساله کتبی</p>
+        <p className="mt-6 text-sm text-white/65">بازدید رایگان · پیش‌فاکتور شفاف · ده سال گارانتی کتبی</p>
       </div>
     </section>
   );
@@ -581,11 +581,11 @@ function Contact() {
   return (
     <section id="contact" className="bg-brand-beige-light py-24">
       <div className="section-wrap">
-        <Heading title="با ما گفت‌وگو کنید" sub="برای مشاوره، بازدید رایگان یا استعلام قیمت، فرم زیر را تکمیل کنید." />
+        <Heading title="گفت‌وگو را آغاز کنیم" sub="برای مشاوره، هماهنگی بازدید رایگان یا استعلام بها، چند خطی برایمان بنویس." />
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="reveal lg:col-span-2">
-            <h3 className="mb-6 text-3xl">راه‌های ارتباطی</h3>
-            <p className="mb-8 leading-8 text-brand-grey">کارشناسان ما حداکثر تا یک روز کاری پاسخ می‌دهند؛ برای موارد فوری تلفن سریع‌تر است.</p>
+            <h3 className="mb-6 text-3xl">راه‌های رسیدن به ما</h3>
+            <p className="mb-8 leading-8 text-brand-grey">کارشناسان ما تا یک روز کاری پاسخ می‌دهند؛ و اگر عجله داری، تلفن همیشه سریع‌تر است.</p>
             <div className="space-y-5">
               <p><a href="mailto:info@alpine-windows.ir" className="hover:text-brand-green"><i className="ri-mail-line ml-3 text-brand-green" /><span dir="ltr">info@alpine-windows.ir</span></a></p>
               <p><a href="tel:02191004820" className="hover:text-brand-green"><i className="ri-phone-line ml-3 text-brand-green" />۰۲۱ ۹۱۰۰ ۴۸۲۰</a></p>
@@ -597,8 +597,8 @@ function Contact() {
             {sent ? (
               <div className="flex min-h-80 flex-col items-center justify-center text-center">
                 <i className="ri-checkbox-circle-line mb-5 text-6xl text-brand-green" />
-                <h3 className="text-3xl">درخواست شما ثبت شد</h3>
-                <p className="mt-3 text-brand-grey">به‌زودی برای هماهنگی بازدید رایگان با شما تماس می‌گیریم.</p>
+                <h3 className="text-3xl">پیامت به دستمان رسید</h3>
+                <p className="mt-3 text-brand-grey">به‌زودی برای هماهنگی بازدید رایگان با تو تماس می‌گیریم.</p>
               </div>
             ) : (
               <div className="grid gap-5 sm:grid-cols-2">
@@ -608,7 +608,7 @@ function Contact() {
                   {["اتاق زیرشیروانی", "ویلایی", "آپارتمان شهری", "فضای تجاری"].map((o) => <option key={o}>{o}</option>)}
                 </select></label>
                 <label>شهر<input className="input mt-2" placeholder="تهران" /></label>
-                <label className="sm:col-span-2">توضیح پروژه<textarea required rows={5} className="input mt-2 resize-none" placeholder="مثلاً نورگیر سقفی برای اتاق زیرشیروانی با سقف شیروانی..." /></label>
+                <label className="sm:col-span-2">روایت پروژه‌ات<textarea required rows={5} className="input mt-2 resize-none" placeholder="مثلاً: نورگیر سقفی برای اتاق زیرشیروانی‌ام، با سقف شیروانی…" /></label>
                 <button className="cursor-pointer bg-brand-green px-7 py-4 font-bold text-white sm:col-span-2">ارسال درخواست</button>
               </div>
             )}
@@ -634,7 +634,7 @@ function Footer() {
               <span className="flex h-10 w-10 items-center justify-center bg-brand-green"><i className="ri-window-2-line text-xl" /></span>
               <span className="font-display text-2xl">پنجره‌های آلپاین</span>
             </div>
-            <p className="max-w-sm leading-7 text-brand-beige-light">نورگیرهای سقفی و پنجره‌های سه‌جداره؛ برای خانه‌هایی که نور، سکوت و منظره کم ندارند.</p>
+            <p className="max-w-sm leading-7 text-brand-beige-light">نورگیرهای سقفی و پنجره‌های سه‌جداره؛ تا هیچ خانه‌ای از نور، سکوت و منظره بی‌نصیب نماند.</p>
           </div>
           {cols.map(([h, ls]) => (
             <div key={h}>
