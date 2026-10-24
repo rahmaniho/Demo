@@ -20,6 +20,11 @@ npm run dev      # پیش‌نمایش توسعه
 npm run build    # خروجی نهایی در dist
 ```
 
+## انتشار روی GitHub Pages
+
+با ادغام روی شاخه `main`، گردش‌کار «Deploy to GitHub Pages» (فایل `.github/workflows/pages.yml`) به‌صورت خودکار build گرفته و روی گیتهاب پیج منتشر می‌کند:
+https://rahmaniho.github.io/Demo/
+
 ## پشته فنی
 
 Vite + React 19 + TypeScript + Tailwind CSS 4 + GSAP ScrollTrigger
