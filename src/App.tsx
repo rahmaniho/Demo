@@ -5,6 +5,9 @@ import { cn } from "@/utils/cn";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** مسیر نسبی تصویرها بر اساس BASE_URL تا روی GitHub Pages (زیرمسیر /Demo/) هم درست بارگذاری شوند */
+const asset = (p: string) => `${import.meta.env.BASE_URL}${p.replace(/^\/+/, "")}`;
+
 type SectionId =
   | "home"
   | "products"
@@ -325,7 +328,7 @@ function Hero() {
             <h1 className="hero__title">خانه‌ات را<br />غرق نور کن</h1>
           </div>
           <div className="hero__cover">
-            <img className="hero__cover-img" src="/images/hero.jpg" alt="اتاق زیرشیروانی روشن با نورگیرهای سقفی آلپاین" />
+            <img className="hero__cover-img" src={asset("images/hero.jpg")} alt="اتاق زیرشیروانی روشن با نورگیرهای سقفی آلپاین" />
           </div>
           <div className="hero-hint">
             <span>برای دیدن نور، پیمایش کنید</span>
@@ -434,7 +437,7 @@ function Projects() {
         <div className="grid gap-8 lg:grid-cols-3">
           {projects.map((s, i) => (
             <article key={s.title} className="reveal bg-white shadow-sm" style={{ transitionDelay: `${i * 100}ms` }}>
-              <div className="story-img"><img src={s.img} alt={s.title} loading="lazy" /></div>
+              <div className="story-img"><img src={asset(s.img)} alt={s.title} loading="lazy" /></div>
               <div className="p-8">
                 <span className="text-sm font-bold text-brand-green">{s.tag}</span>
                 <h3 className="my-3 text-3xl">{s.title}</h3>
@@ -495,7 +498,7 @@ function InstallBand() {
   return (
     <section id="about" className="bg-white py-24">
       <div className="section-wrap grid items-center gap-12 lg:grid-cols-2">
-        <div className="story-img reveal"><img src="/images/install.jpg" alt="نصاب متخصص آلپاین در حال نصب پنجره سه‌جداره" loading="lazy" /></div>
+        <div className="story-img reveal"><img src={asset("images/install.jpg")} alt="نصاب متخصص آلپاین در حال نصب پنجره سه‌جداره" loading="lazy" /></div>
         <div className="reveal">
           <h2 className="section-title mb-6">نصب، نیمی از محصول است</h2>
           <p className="mb-7 leading-9 text-brand-grey">
