@@ -324,11 +324,11 @@ function Hero() {
       <div className="hero-container" id="home">
         <section className="hero">
           <div className="hero__content">
-            <div className="hero__bg" />
+            <div className="hero__bg" style={{ backgroundImage: `linear-gradient(rgba(20,32,11,.2), rgba(20,32,11,.2)), url("${asset("images/hero-window.jpg")}")` }} />
             <h1 className="hero__title">آسمان را<br />به خانه بیاور</h1>
           </div>
           <div className="hero__cover">
-            <img className="hero__cover-img" src={asset("images/hero.jpg")} alt="اتاق زیرشیروانی غرق در نور، با نورگیرهای سقفی آلپاین" />
+            <img className="hero__cover-img" src={asset("images/hero-window.jpg")} alt="پنجرهٔ گشودهٔ آلپاین رو به کوهساران مه‌آلود؛ نور بامداد از دل دره می‌گذرد" />
           </div>
           <div className="hero-hint">
             <span>آهسته پایین برو؛ نور در راه است</span>
