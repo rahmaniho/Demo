@@ -762,6 +762,23 @@ function Footer() {
         </div>
         <div className="mt-12 flex flex-col justify-between gap-4 border-t border-white/10 pt-7 text-sm text-brand-beige-light md:flex-row">
           <p>© ۱۴۰۵ پنجره‌های آلپاین. همه حقوق محفوظ است.</p>
+          <a
+            className="ks-credit"
+            href="https://www.karen-soft.ir"
+            target="_blank"
+            rel="noopener noreferrer"
+            dir="ltr"
+            title="Designed & Developed by KarenSoft | کارن سافت"
+          >
+            <span className="ks-credit__markwrap">
+              <span className="ks-credit__ring" aria-hidden="true" />
+              <img className="ks-credit__mark" src={asset("images/karensoft/mark.png")} alt="" />
+            </span>
+            <span className="ks-credit__text">Designed &amp; Developed by</span>
+            <img className="ks-credit__wm-en" src={asset("images/karensoft/wordmark-en.png")} alt="Karensoft" />
+            <span className="ks-credit__sep" aria-hidden="true">|</span>
+            <img className="ks-credit__wm-fa" src={asset("images/karensoft/wordmark-fa.png")} alt="کارن سافت" />
+          </a>
           <div className="flex gap-6"><a href="#home">بازگشت به بالا ↑</a></div>
         </div>
       </div>
